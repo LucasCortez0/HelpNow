@@ -1,14 +1,18 @@
 package entities;
 
-public class Cliente {
-	
+public class Prestador {
+
 	String nome, email;
 	int senha;
+	String categoria;
+	String cargo;
 	
-	public Cliente(String nome, String email, int senha) {
+	public Prestador(String nome, String email, int senha, String categoria, String cargo) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
+		this.categoria = categoria;
+		this.cargo = cargo;
 	}
 
 	public String getNome() {
@@ -34,5 +38,5 @@ public class Cliente {
 	public void setSenha(int senha) {
 		this.senha = senha;
 	}
-	
+
 }
