@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import application.Inicializador;
 import entities.Categoria;
 import entities.Cliente;
 import entities.Prestador;
@@ -19,6 +20,7 @@ public class Controlador {
 	public static Scanner sc = new Scanner(System.in);
 	
 	public void controla() {
+		categorias = Inicializador.inicia();
 		byte clienteOuPrestador = 1;
 		while(clienteOuPrestador != 0) {
 			clienteOuPrestador = Inicio.view(sc);

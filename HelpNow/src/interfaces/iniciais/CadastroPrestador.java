@@ -3,6 +3,7 @@ package interfaces.iniciais;
 import java.util.List;
 import java.util.Scanner;
 
+import application.Inicializador;
 import entities.Categoria;
 import entities.Prestador;
 
@@ -45,13 +46,27 @@ public class CadastroPrestador {
 		}
 		}while(senha1 != senha2);
 		
-		//Fazer a exibição das opções de categorias e cargos!!!!!!!
-		
+		boolean cargoJaSelecionado = false;
+		byte categoriaSelecionada;
+		byte cargoSelecionado = 0;
+		while(cargoJaSelecionado == false) {
+			System.out.println();
+			System.out.println("Selecione a categoria que deseja atuar: ");
+			System.out.print(Inicializador.exibirCategorias());	
+			System.out.print("Selecione: ");
+			categoriaSelecionada = sc.nextByte();
+			if(categoriaSelecionada < 1 || categoriaSelecionada > 5) {
+				System.out.println("Categoria não encontrada");
+			}else {
+				categoriaSelecionada -= 1;
+				System.out.println(categorias.get(categoriaSelecionada));
+			}
+		}
 		System.out.println("\nCadastro realizado com sucesso!");
 		
 		System.out.println("\nNome: " + nome + "\nEmail de acesso: " + email + "\nSenha de acesso: " + senha2);
 		
-		Prestador prestador = new Prestador(nome, email, senha2, cargo, categoria);	
+		Prestador prestador = new Prestador(nome, email, senha2, "1", "1");	
 		return prestador;
 		
 	}
