@@ -6,42 +6,45 @@ import java.util.List;
 import entities.Categoria;
 
 public class Inicializador {
+	
 	public static List<Categoria> inicia() {
 	
 		List <Categoria> categorias = new ArrayList<>();
 		Categoria reformasReparosDomesticos = new Categoria();
-		reformasReparosDomesticos.addCargo("Encanador");
-		reformasReparosDomesticos.addCargo("Eletricista");
-		reformasReparosDomesticos.addCargo("Pedreiro");
-		reformasReparosDomesticos.addCargo("Pintor");
 		categorias.add(reformasReparosDomesticos);
-		
 		Categoria servicosDomesticos = new Categoria();
-		servicosDomesticos.addCargo("Diarista");
-		servicosDomesticos.addCargo("Cozinheira");
-		servicosDomesticos.addCargo("Babá");
-		servicosDomesticos.addCargo("Passeador de cães");
 		categorias.add(servicosDomesticos);
-		
 		Categoria assTecnica = new Categoria();
-		assTecnica.addCargo("Geladeira");
-		assTecnica.addCargo("Maquina de lavar roupas");
-		assTecnica.addCargo("TI - hardware e software");
-		assTecnica.addCargo("Ar condicionado");
 		categorias.add(assTecnica);
-		
 		Categoria eventos = new Categoria();
-		eventos.addCargo("Buffet");
-		eventos.addCargo("Recepcionista");
-		eventos.addCargo("Segurança");
-		eventos.addCargo("Decoração");
-		eventos.addCargo("Garçom");
 		categorias.add(eventos);
-		
 		Categoria transporte = new Categoria();
-		transporte.addCargo("Ônibus");
-		transporte.addCargo("Caminhão");
 		categorias.add(transporte);
+		
+		categorias.get(0).addCargo("Encanador");
+		categorias.get(0).addCargo("Eletricista");
+		categorias.get(0).addCargo("Pedreiro");
+		categorias.get(0).addCargo("Pintor");
+				
+		categorias.get(1).addCargo("Diarista");
+		categorias.get(1).addCargo("Cozinheira");
+		categorias.get(1).addCargo("Babá");
+		categorias.get(1).addCargo("Passeador de cães");
+		
+		categorias.get(2).addCargo("Geladeira");
+		categorias.get(2).addCargo("Maquina de lavar roupas");
+		categorias.get(2).addCargo("TI - hardware e software");
+		categorias.get(2).addCargo("Ar condicionado");
+		
+		categorias.get(3).addCargo("Buffet");
+		categorias.get(3).addCargo("Recepcionista");
+		categorias.get(3).addCargo("Segurança");
+		categorias.get(3).addCargo("Decoração");
+		categorias.get(3).addCargo("Garçom");
+		
+		categorias.get(4).addCargo("Ônibus");
+		categorias.get(4).addCargo("Caminhão");
+		
 		return categorias;
 	}
 	

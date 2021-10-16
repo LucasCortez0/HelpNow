@@ -1,18 +1,28 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Prestador {
 
+	private List<Pedido> pedidos = new ArrayList<>(); 
 	String nome, email;
 	int senha;
-	String categoria;
+	Categoria categoria;
 	String cargo;
+	double valorServico;
 	
-	public Prestador(String nome, String email, int senha, String categoria, String cargo) {
+	public Prestador(String nome, String email, int senha, Categoria categoria, String cargo, double valorServico) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
 		this.categoria = categoria;
 		this.cargo = cargo;
+		this.valorServico = valorServico; 
+	}
+	
+	public List<Pedido> getPedidos (){
+		return pedidos;
 	}
 
 	public String getNome() {

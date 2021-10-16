@@ -5,9 +5,17 @@ import java.util.List;
 
 public class Categoria {
 	
-	public static List<String> cargos = new ArrayList<>();
+	public List<String> cargos = new ArrayList<>();
 	
-	public static void addCargo(String cargo) {
+	public String getCargo(int numero) {
+		return cargos.get(numero);
+	}
+	
+	public int getTamanhoLista() {
+		return cargos.size();
+	}
+	
+	public void addCargo(String cargo) {
 		cargos.add(cargo);
 	}
 	

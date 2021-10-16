@@ -12,6 +12,7 @@ import interfaces.iniciais.CadastroCliente;
 import interfaces.iniciais.CadastroPrestador;
 import interfaces.iniciais.Inicio;
 import interfaces.iniciais.Login;
+import interfaces.programa.InterfacePrestador;
 	
 public class Controlador {
 	public static List<Cliente> clientes = new ArrayList<>();
@@ -36,7 +37,7 @@ public class Controlador {
 		if (clienteOuPrestador == 1) {
 		
 		prestadores.add(CadastroPrestador.view(sc, prestadores, categorias));
-			
+		InterfacePrestador.view(prestadores.get(prestadores.size() - 1), sc);
 		}else if(clienteOuPrestador == 2){
 			
 		clientes.add(CadastroCliente.view(sc, clientes));
