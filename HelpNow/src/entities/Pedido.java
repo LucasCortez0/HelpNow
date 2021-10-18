@@ -7,7 +7,7 @@ public class Pedido {
 	Cliente cliente;
 	Prestador prestador;
 	
-	public Pedido(String local, Cliente clinte, Prestador prestador) {
+	public Pedido(String local, Cliente clinte, Prestador prestador, Cliente cliente) {
 		this.local = local;
 		this.cliente = cliente;
 		this.prestador = prestador;

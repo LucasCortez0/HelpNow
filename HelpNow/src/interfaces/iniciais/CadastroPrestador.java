@@ -48,7 +48,6 @@ public class CadastroPrestador {
 		
 		boolean cargoJaSelecionado = false;
 		byte categoriaSelecionada = -1;
-		byte cargoSelecionado = 0;
 		byte area = 0;
 		Categoria categoria = null;
 		
@@ -87,10 +86,10 @@ public class CadastroPrestador {
 			System.out.print("Informe o valor do serviço: R$");
 			valorServico = sc.nextDouble();
 		}
+		System.out.println("\nNome: " + nome + "\nEmail de acesso: " + email + "\nSenha de acesso: " + senha2);
+		System.out.println("Area: " + categoria.getCargo(area - 1) + "\nValor do serviço: R$" + String.format("%.2f", valorServico));
 		
 		System.out.println("\nCadastro realizado com sucesso!");
-		
-		System.out.println("\nNome: " + nome + "\nEmail de acesso: " + email + "\nSenha de acesso: " + senha2);
 		
 		Prestador prestador = new Prestador(nome, email, senha2, categoria, categoria.getCargo(area - 1), valorServico);	
 		return prestador;

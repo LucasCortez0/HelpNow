@@ -15,7 +15,7 @@ public class InterfacePrestador {
 			System.out.println("1. Serviços pendentes");
 			System.out.println("2. Serviços concluidos");
 			System.out.println("0. Sair");		
-			System.out.print("\nSelecione: ");		
+			System.out.print("Selecione: ");		
 			opc = sc.nextByte();
 			if(opc < 0 || opc > 2) {
 				System.out.println("Opção inválida!");
@@ -33,20 +33,22 @@ public class InterfacePrestador {
 	public static void servicosPendentes(Prestador prestador, Scanner sc) {
 		List<Pedido> pedidos = prestador.getPedidos();
 	
-		int opc = -1;
-		while(opc !=  0) {
-			for(int i = 0; i < pedidos.size(); i++) {
-				if(pedidos.get(i).getStatusPedido() == true) {
-					System.out.println(pedidos.get(i));
-				}
+		for(int i = 0; i < pedidos.size(); i++) {
+			if(pedidos.get(i).getStatusPedido() == true) {
+				System.out.println(pedidos.get(i));
 			}
-		}
-		
-	
+		}		
 	}
 	
 	public static void servicosConcluidos(Prestador prestador, Scanner sc) {
+		
 		List<Pedido> pedidos = prestador.getPedidos();	
+		
+		for(int i = 0; i < pedidos.size(); i++) {
+			if(pedidos.get(i).getStatusPedido() == false) {
+				System.out.println(pedidos.get(i));
+			}
+		}
 	}	
 	
 }
