@@ -49,4 +49,22 @@ public class Prestador {
 		this.senha = senha;
 	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+	public String toString() {
+		return "Nome: " + nome + " | R$" + String.format("%.2f", valorServico);
+	}
 }

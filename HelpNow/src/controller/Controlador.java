@@ -11,9 +11,11 @@ import entities.Prestador;
 import interfaces.iniciais.CadastroCliente;
 import interfaces.iniciais.CadastroPrestador;
 import interfaces.iniciais.Inicio;
-import interfaces.iniciais.Login;
+import interfaces.iniciais.JaCadastradoCliente;
+import interfaces.iniciais.JaCadastradoPrestador;
 import interfaces.iniciais.LoginCliente;
 import interfaces.iniciais.LoginPrestador;
+import interfaces.programa.ExibirCategoriasCliente;
 import interfaces.programa.InterfacePrestador;
 	
 public class Controlador {
@@ -25,10 +27,18 @@ public class Controlador {
 	public void controla() {
 		categorias = Inicializador.inicia();
 		byte clienteOuPrestador = 1;
+		int jaCadastrado = -1;
 		while(clienteOuPrestador != 0) {
 			clienteOuPrestador = Inicio.view(sc);
-			int jaCadastrado = Login.view(sc);
-			if(jaCadastrado == 2) {
+			if(clienteOuPrestador == 1){
+				jaCadastrado = JaCadastradoPrestador.view(sc);
+			}else if(clienteOuPrestador == 2){
+				jaCadastrado = JaCadastradoCliente.view(sc);
+			}
+			
+			if(jaCadastrado == 3) {
+				exibirCategoriasClientesSemCadastro();
+			}else if(jaCadastrado == 2) {
 				cadastrar(clienteOuPrestador);
 			}else if(jaCadastrado == 1) {
 				login(clienteOuPrestador);
@@ -56,5 +66,11 @@ public class Controlador {
 		} else if(clienteOuPrestador == 2) {
 			LoginCliente.view(clientes, sc);
 		}
+	}
+	
+	public static void exibirCategoriasClientesSemCadastro(){
+		ExibirCategoriasCliente.viewCategorias(sc, categorias);
+		
+		Prestador prestador = ExibirCategoriasCliente.viewPrestadores(sc, prestadores, categorias);
 	}
 }

@@ -8,7 +8,7 @@ import entities.Categoria;
 public class Inicializador {
 	
 	public static List<Categoria> inicia() {
-	
+		
 		List <Categoria> categorias = new ArrayList<>();
 		Categoria reformasReparosDomesticos = new Categoria();
 		categorias.add(reformasReparosDomesticos);

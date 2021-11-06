@@ -64,10 +64,10 @@ public class CadastroPrestador {
 				categoriaSelecionada -= 1;
 				categoria = categorias.get(categoriaSelecionada);
 				System.out.println(categoria);
-				while(area < 1 || area > categoria.getTamanhoLista() + 1) {
+				while(area < 1 || area > categoria.getTamanhoLista()) {
 					System.out.print("Selecione àrea: ");
 					area = sc.nextByte();
-					if(area < 1 || area > categoria.getTamanhoLista() + 1){
+					if(area < 1 || area > categoria.getTamanhoLista()){
 						System.out.println("Opção invalida!");
 					}else {
 						cargoJaSelecionado = true;
